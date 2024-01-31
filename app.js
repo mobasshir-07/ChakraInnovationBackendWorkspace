@@ -5,6 +5,9 @@ const csv = require('csv-parser');
 const streamifier = require('streamifier');
 const moment = require('moment');
 const cors = require('cors');
+require('dotenv').config();
+
+const port = process.env.PORT || 4000;
 
 // Enable CORS for all routes
 app.use(cors());
@@ -284,6 +287,6 @@ app.get('/', async (req, res) => {
     }
 });
 
-app.listen(4000, () => {
-    console.log(`Server is running on http://localhost:${4000}`);
-});
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+  });
